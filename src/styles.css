@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+}
+
+.widget-container {
+  padding: 1rem 2rem;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  flex-direction: column;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.widget {
+  position: absolute;
+  right: -300px; /* Start the element off the screen on the right */
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  width: 200px;
+  height: 100px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: slideInRight 0.5s forwards, stackUp 0.2s forwards;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.removed {
+  opacity: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    right: -300px; /* Start the element off the screen on the right */
+  }
+  to {
+    right: 20px; /* Adjust the final position as needed */
+  }
+}
+
+@keyframes stackUp {
+  to {
+    transform: translateY(-100%);
+  }
+}
